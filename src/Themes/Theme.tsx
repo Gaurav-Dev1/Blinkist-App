@@ -1,4 +1,4 @@
-import { createTheme } from "@mui/material"
+import { createTheme } from "@mui/material/styles"
 
 declare module '@mui/material/styles' {
     interface TypographyVariants {
@@ -7,6 +7,8 @@ declare module '@mui/material/styles' {
         body3: React.CSSProperties;
         caption1: React.CSSProperties;
         caption2: React.CSSProperties;
+        caption3: React.CSSProperties; 
+        subtitle5?: React.CSSProperties;
     }
     
     interface TypographyVariantsOptions {
@@ -15,6 +17,8 @@ declare module '@mui/material/styles' {
         body3?: React.CSSProperties;
         caption1?: React.CSSProperties;
         caption2?: React.CSSProperties;
+        caption3?: React.CSSProperties;
+        subtitle5?: React.CSSProperties;
     }
 }
 
@@ -22,48 +26,46 @@ declare module '@mui/material/Typography' {
     interface TypographyPropsVariantOverrides {
         caption1: true;
         caption2: true;
+        caption3: true;
+        subtitle5: true;
     }
 }
 const theme = createTheme({
     typography: {
         h1: {
-            fontFamily: "Cera Pro,sans-serif",
-            fontWeight: "bold",
+            fontFamily: "Cera Pro",
+            fontStyle: 'normal',
+            fontWeight: 700,
             fontSize: "36px",
             lineHeight: "45px",
-            color: "#03314B",
         },
         h3: {
             fontFamily: "Cera Pro",
             fontStyle: "normal",
-            fontWeight: "700",
+            fontWeight: 700,
             fontSize: "24px",
             lineHeight: "30px",
-            color: "#03314B",
         },
         body1: {
             fontFamily: 'Cera Pro',
             fontStyle: "normal",
-            fontWeight: 700,
+            fontWeight: '500px',
             fontSize: "16px",
-            lineHeight: "24px",
-            color: "#353430"
+            lineHeight: "20px",
         },
         body2: {
             fontFamily: 'Cera Pro',
             fontStyle: 'normal',
-            fontHeight: 400,
+            fontWeight: 400,
             fontSize: '16px',
-            lineHeight: '24px',
-            color: '#353430'
+            lineHeight: '20px',
         },
         subtitle1: {
             fontFamily: 'Cera Pro',
             fontStyle: 'normal',
-            fontHeight: 500,
-            fontSize: '24px',
-            lineHeight: '32px',
-            color: '#353430'
+            fontWeight: 700,
+            fontSize: '18px',
+            lineHeight: '23px',
         },
         subtitle2: {
             fontFamily: 'Cera Pro',
@@ -84,6 +86,20 @@ const theme = createTheme({
             fontSize: '14px',
             lineHeight: '22px',
             fontWeight: 400,
+        },
+        caption3: {
+            fontFamily: 'Cera Pro',
+            fontStyle: 'normal',
+            fontWeight: 400,
+            fontSize: '14px',
+            lineHeight: '18px',
+        },
+        subtitle5: {
+            fontFamily: 'Cera Pro',
+            fontStyle: 'normal',
+            fontWeight: 400,
+            fontSize: '20px',
+            lineHeight: '25px',
         }
         
     },
@@ -93,8 +109,7 @@ const theme = createTheme({
         },
         secondary: {
             main: '#0365F2'
-        },
-        
+        },    
     }    
 })
 

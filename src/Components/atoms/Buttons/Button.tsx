@@ -3,18 +3,20 @@ import { Button } from '@mui/material';
 
 
 export interface ButtonIconProps {
-    startIcon?: React.ReactNode
+    startIcon?: React.ReactNode,
+    endIcon?: React.ReactNode,
     color?: string,
     variant?: string,
     style?: React.CSSProperties,
     children?: React.ReactNode,
     onClick?: () => void;
     className?: string;
+    
 }
 
 export const ButtonComponent = (props: any) => {
 
-    const {variant, style,children, color, onClick, className, startIcon} = props;
+    const {variant, style,children, color, onClick, className, startIcon, endIcon} = props;
     return (
         <>
             <Button 
@@ -24,6 +26,7 @@ export const ButtonComponent = (props: any) => {
              color={color}
              onClick={onClick}
              className={className}
+             endIcon={endIcon}
             >
                 {children}
             </Button>

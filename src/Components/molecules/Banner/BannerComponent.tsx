@@ -16,11 +16,10 @@ export interface BannerProps {
 const MainContainer = styled('div') ({
 
   width: '912px',
-  height: '264px',
+  height: '230px',
   background: '#F1F6F4',
   display: 'flex',
-  gap: '112px'
-
+  gap: '112px',
 })
 
 const LeftBannerContainer = styled("div")({

@@ -4,6 +4,8 @@ import { makeStyles } from '@mui/styles';
 import { Divider} from '@mui/material';
 import { ExploreTabData } from '../../../Data/ExploreTabData';
 import IconText from '../../molecules/IconText/IconText';
+import { useNavigate } from 'react-router-dom';
+// import zIndex from "@material-ui/core/styles/zIndex";
 
 
 const useStyles = makeStyles({
@@ -35,9 +37,17 @@ const useStyles = makeStyles({
 const ExploreTabOpen = () => {
 
     const styles = useStyles();
+    const navigate = useNavigate();
+
+    const openEntrepreneurshipPage = (exploreType: string) => {
+        console.log("method invoked")
+        if(exploreType === 'Entrepreneurship') {
+            navigate('/entrepreneurShip');
+        }
+    }
 
     return (
-        <Box  sx={{width: '100%', height: '398px' ,backgroundColor: '#F1F6F4', position: 'absolute'}}>
+        <Box  sx={{width: '100%', height: '398px' ,backgroundColor: '#F1F6F4', position: 'absolute', zIndex: 10}}>
             <Box display={'flex'}>
                 <Box sx = {{marginLeft: '250px',marginTop: '30px'}}>
                     <Typography className= {styles.exploreByOptionTypography}>Explore By Category</Typography>
@@ -57,7 +67,7 @@ const ExploreTabOpen = () => {
                     ExploreTabData.map( (data,key) => {
                         return (
                             <Grid item md={4}>
-                                <IconText imgSrc={data.imgSrc}  title={data.title}  />
+                                <IconText imgSrc={data.imgSrc}  title={data.title} onClick={() => openEntrepreneurshipPage(data.title)} variant="body2"/>
                             </Grid>
                         )
                     }  

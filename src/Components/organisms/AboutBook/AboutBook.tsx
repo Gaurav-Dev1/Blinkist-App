@@ -23,10 +23,11 @@ const useStyles = makeStyles({
     },
     tabsContentTypography: {
         lineHeight: "20.11px !important",
+        fontWeight: '400px !important',
         fontSize: "16px !important",
         color: '#03314B !important',
         position: 'relative',
-        marginLeft: '0px !important',
+        marginLeft: '-25px !important',
         fontFamily: 'Cera Pro'
     }
 })
@@ -84,17 +85,17 @@ const AboutBookTab = () => {
         </Box>
         <TabPanel value="1">
             <Box width={'600px'} height={'100px'}>
-                <Typography  className='styles.tabsContentTypography'>{Constants.Tabs.Synopsis}</Typography>
+                <Typography  className={styles.tabsContentTypography}>{Constants.Tabs.Synopsis}</Typography>
             </Box>
         </TabPanel>
         <TabPanel value="2">
             <Box width={'600px'} height={'100px'}>
-                <Typography  className='styles.tabsContentTypography'>{Constants.Tabs.WhoIsItFor}</Typography>
+                <Typography  className={styles.tabsContentTypography}>{Constants.Tabs.WhoIsItFor}</Typography>
             </Box>
         </TabPanel>
         <TabPanel value="3">
             <Box width={'600px'} height={'100px'}>
-                <Typography className='styles.tabsContentTypography'>{Constants.Tabs.AboutAuthor}</Typography>
+                <Typography className={styles.tabsContentTypography}>{Constants.Tabs.AboutAuthor}</Typography>
             </Box>
         </TabPanel>
       </TabContext>

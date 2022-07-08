@@ -2,6 +2,8 @@ import { makeStyles, styled, ThemeProvider } from "@mui/styles";
 import { TabContext, TabList, TabPanel } from "@mui/lab";
 import { useEffect, useState } from "react";
 import { Container, Tab } from "@mui/material";
+import api from "../../../Axios/api";
+import BookCard, { BookInfo } from "../BookCard/BookCard";
 
 
  const MainContainer = styled("div")({
@@ -11,6 +13,15 @@ import { Container, Tab } from "@mui/material";
 
 const TabsContainer = styled("div")({
   width: "100%",
+});
+
+const CardStyling = styled("div")({
+  display: "flex",
+  flexDirection: "row",
+  flexWrap: "wrap",
+  gap: "25px 19px",
+  width: 912,
+  position: "relative",
 });
 
 const useStyles = makeStyles({
@@ -33,6 +44,41 @@ const Tabs = () => {
     console.log(event)
     setValue(newValue);
   };
+
+  const [books, setBooks] = useState<BookInfo[]>([
+    {
+      id: 0,
+      title: "",
+      author: "",
+      timeToRead: "",
+      numberOfReads: "",
+      image: "",
+      status: {
+        isFinished: false,
+        isFeatured: false,
+        isTrending: false,
+        justAdded: false,
+      },
+    },
+  ]);
+
+  const [count, setCount] = useState(0)
+  const getBooks = async () => {
+    const bookResponse = await api.get('/library');
+    const data = bookResponse.data;
+    setBooks(data);
+  }
+
+  let incrementCount = () => {
+    console.log('count increased')
+    setCount(count + 1)
+  }
+
+  useEffect(() => {
+    getBooks();
+  }, [count])
+
+
 
   const styles = useStyles();
 
@@ -84,15 +130,55 @@ const Tabs = () => {
               </TabList>
             </Container>
             <TabPanel value="1">
-             Currently Reading Books
+              <CardStyling>
+                {
+                  books.filter((item) => !item.status.isFinished)
+                  .map((book, index) => {
+                    return (
+                      <BookCard 
+                        id={book.id}
+                        key={index}
+                        image={book.image}
+                        title={book.title}
+                        author={book.author}
+                        timeToRead={book.timeToRead}
+                        numberOfReads={book.numberOfReads}
+                        isFinished={!book.status.isFinished}
+                        value={book.id}
+                        onClick={incrementCount}
+                      />
+                    )
+                  })
+                }
+              </CardStyling>
+             
             </TabPanel>
             <TabPanel value="2">
-              Finished Books
+              <CardStyling>
+                {
+                  books.filter((item) => item.status.isFinished)
+                  .map((book, index) => {
+                    return (
+                      <BookCard 
+                        id={book.id}
+                        key={index}
+                        image={book.image}
+                        title={book.title}
+                        author={book.author}
+                        timeToRead={book.timeToRead}
+                        numberOfReads={book.numberOfReads}
+                        readAgain={book.status.isFinished}
+                        value={book.id}
+                        onClick={incrementCount}
+                      />
+                    )
+                  })
+                }
+              </CardStyling>
             </TabPanel>
           </TabContext>
         </TabsContainer>
       </MainContainer>
-    
   );
 };
 

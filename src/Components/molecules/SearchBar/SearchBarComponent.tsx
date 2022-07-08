@@ -5,14 +5,15 @@ import Search from "./../../../Images/Search.svg"
 
 const useStyles = makeStyles({
     inputBar: {
-        width: 180,
+        width: 278,
         height: 24,
         fontfamily: 'Cera Pro',
-        fontWeight: 400,
-        fontSize: 16,
-        lineHeight: 24,
+        fontWeight: 700,
+        fontSize: '24px',
+        lineHeight: '30px',
         border: "none",
-        marginLeft: "32px",
+        color: '#6D787E',
+        marginLeft: "25px",
         "&:focus": {
             outline: "none",
         }
@@ -20,7 +21,7 @@ const useStyles = makeStyles({
     boxElement: {
         width: 598,
         height: 28,
-        borderBottom: "1px solid #BAC9CF",
+        borderBottom: "2px solid #6D787E",
         display: "flex",
         flexDirection: "row"
     },

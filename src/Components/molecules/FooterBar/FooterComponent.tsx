@@ -10,14 +10,14 @@ function FooterComponent() {
     return (
         
         <ThemeProvider theme={theme}>
-            <Box sx = {{padding: '24px 24px 24px 244px',width: '1440px',height: '370px',background: '#F1F6F4',position: 'absolute',bottom: '0px' }}>
+            <Box sx = {{padding: '24px 24px 24px 244px',width: '1440px',height: '370px',background: '#F1F6F4',bottom: '0px' }}>
                 <Box sx={{display: 'flex'}}>
                     <Box>
                         <Box sx={{marginTop: '14px'}}>
                         <Logo src={BlinkistLogo}/>
                         </Box>
                         <Box sx={{width: "378px", marginTop: '32px' , flexDirection: 'column'}}>
-                            <Typography variant="subtitle1" color="secondary">
+                            <Typography variant="subtitle1" color="secondary" sx={{lineHeight: '32px', fontWeight: '500px', fontSize: '24px'}}>
                             Big ideas in small packages<br></br>
                             Start learning now
                             </Typography>
@@ -37,7 +37,7 @@ function FooterComponent() {
                                 {
                                     curr.topics.map(currTopic => {
                                         return <Box sx = {{marginTop: '16px'}}>
-                                        <Typography variant='body2'>
+                                        <Typography variant='body2' sx={{color: "#6D787E", lineHeight: '24px'}}>
                                             {currTopic}
                                         </Typography>
                                         </Box>
