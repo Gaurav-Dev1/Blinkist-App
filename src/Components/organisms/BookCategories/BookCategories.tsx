@@ -37,6 +37,8 @@ const MainContainer = styled('div') ({
 function BookCategories(props: BookCategoryProps) {
     let { status, title} = props;
 
+    const[count,setCount] = useState(0)
+
     const [books, setBooks] = useState<BookInfo[]>([
         {
           id: 0,
@@ -50,6 +52,7 @@ function BookCategories(props: BookCategoryProps) {
             isFeatured: false,
             isTrending: false,
             justAdded: false,
+            inLibrary: false
           },
         },
     ]);
@@ -63,13 +66,13 @@ function BookCategories(props: BookCategoryProps) {
     
     useEffect(() => {
         getBooks();
-    }, [status])
+    }, [status,count])
 
     return (
         <>
         <Typography variant='h3'>{title}</Typography>
         <br></br>
-        <MainContainer>
+        <MainContainer onClick={() => setCount(count+1)}>
             {
                 (status === 'trending') ? 
         
@@ -84,7 +87,7 @@ function BookCategories(props: BookCategoryProps) {
                                 timeToRead={book.timeToRead}
                                 numberOfReads={book.numberOfReads}
                                 image = {book.image}
-                                isFinished={book.status.isFinished}
+                                inLibrary={book.status.inLibrary}
                                 value={book.id}
                             />
                         )
@@ -102,7 +105,7 @@ function BookCategories(props: BookCategoryProps) {
                                 timeToRead={book.timeToRead}
                                 numberOfReads={book.numberOfReads}
                                 image = {book.image}
-                                isFinished={book.status.isFinished}
+                                inLibrary={book.status.inLibrary}
                                 value={book.id}
                             />
                         )
@@ -121,7 +124,7 @@ function BookCategories(props: BookCategoryProps) {
                                 timeToRead={book.timeToRead}
                                 numberOfReads={book.numberOfReads}
                                 image = {book.image}
-                                isFinished={book.status.isFinished}
+                                inLibrary={book.status.inLibrary}
                                 value={book.id}
                             />
                         )

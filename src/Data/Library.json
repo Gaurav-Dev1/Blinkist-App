@@ -8,10 +8,11 @@
       "timeToRead": "13-min read",
       "numberOfReads": "1.9k reads",
       "status": {
-        "isFinished": true,
-        "isTrending": false,
+        "isFinished": false,
+        "isTrending": true,
         "isFeatured": false,
-        "justAdded": false
+        "justAdded": false,
+        "inLibrary": false
       }
     },
     {
@@ -25,7 +26,8 @@
         "isFinished": false,
         "isTrending": false,
         "justAdded": false,
-        "isFeatured": false
+        "isFeatured": false,
+        "inLibrary": false
       }
     },
     {
@@ -39,7 +41,8 @@
         "isFinished": false,
         "isTrending": false,
         "justAdded": false,
-        "isFeatured": true
+        "isFeatured": true,
+        "inLibrary": false
       }
     },
     {
@@ -53,7 +56,8 @@
         "isFinished": false,
         "isTrending": false,
         "justAdded": false,
-        "isFeatured": false
+        "isFeatured": false,
+        "inLibrary": false
       }
     },
     {
@@ -67,7 +71,8 @@
         "isFinished": false,
         "isTrending": true,
         "justAdded": false,
-        "isFeatured": false
+        "isFeatured": false,
+        "inLibrary": true
       }
     },
     {
@@ -79,9 +84,10 @@
       "image": "../Images/Book6.svg",
       "status": {
         "isFinished": true,
-        "isTrending": false,
+        "isTrending": true,
         "justAdded": false,
-        "isFeatured": false
+        "isFeatured": false,
+        "inLibrary": true
       }
     },
     {
@@ -92,10 +98,11 @@
       "numberOfReads": "",
       "image": "../Images/Book7.svg",
       "status": {
-        "isFinished": true,
+        "isFinished": false,
         "isTrending": false,
         "justAdded": true,
-        "isFeatured": false
+        "isFeatured": false,
+        "inLibrary": false
       }
     },
     {
@@ -106,10 +113,11 @@
       "numberOfReads": "1.9k reads",
       "image": "../Images/Book8.svg",
       "status": {
-        "isFinished": true,
+        "isFinished": false,
         "isTrending": false,
         "justAdded": true,
-        "isFeatured": false
+        "isFeatured": false,
+        "inLibrary": false
       }
     },
     {
@@ -120,10 +128,11 @@
       "numberOfReads": "",
       "image": "../Images/Book9.svg",
       "status": {
-        "isFinished": true,
-        "isTrending": false,
+        "isFinished": false,
+        "isTrending": true,
         "justAdded": true,
-        "isFeatured": false
+        "isFeatured": false,
+        "inLibrary": false
       }
     },
     {
@@ -134,10 +143,26 @@
       "numberOfReads": "1.9k reads",
       "image": "../Images/Book10.svg",
       "status": {
-        "isFinished": true,
-        "isTrending": false,
+        "isFinished": false,
+        "isTrending": true,
         "justAdded": false,
-        "isFeatured": false
+        "isFeatured": false,
+        "inLibrary": true
+      }
+    },
+    {
+      "id": 11,
+      "title": "Employee to Entrepreneur",
+      "author": "Steve Glaveski",
+      "timeToRead": "14-minute read",
+      "numberOfReads": "1.9k reads",
+      "image": "../Images/Book2.svg",
+      "status": {
+        "isFinished": false,
+        "isTrending": true,
+        "justAdded": false,
+        "isFeatured": false,
+        "inLibrary": false
       }
     }
   ]

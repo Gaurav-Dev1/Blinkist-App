@@ -59,15 +59,14 @@ const ExploreTabOpen = () => {
                     <Typography className= {styles.otherOptionTypography}>See popular titles</Typography>
                 </Box>
             </Box>
-            
-            <Divider sx={{border: '1px solid #042330',width: '940px' ,marginTop: '24px', marginLeft: '250px', marginRight: '17.36%'}} />
+            <Box sx={{borderBottom: '1px solid #042330',width: '940px' ,marginTop: '24px', marginLeft: '250px', marginRight: '17.36%'}} />
 
             <Grid container rowSpacing={'20px'} sx = {{width: '940px', marginTop: '4px', marginLeft: '250px'}}>
                 {
                     ExploreTabData.map( (data,key) => {
                         return (
-                            <Grid item md={4}>
-                                <IconText imgSrc={data.imgSrc}  title={data.title} onClick={() => openEntrepreneurshipPage(data.title)} variant="body2"/>
+                            <Grid item md={4} >
+                                <IconText imgSrc={data.imgSrc}  title={data.title} onClick={() => openEntrepreneurshipPage(data.title)} variant="body2" />
                             </Grid>
                         )
                     }  

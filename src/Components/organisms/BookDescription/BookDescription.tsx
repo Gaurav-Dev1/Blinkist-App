@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Box , Typography} from '@mui/material';
 import { makeStyles,styled } from '@mui/styles';
 import { Constants } from '../../../Data/Constants';
@@ -8,6 +8,8 @@ import ButtonComponent from '../../atoms/Buttons/Button';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import AboutBookTab from '../AboutBook/AboutBook';
 import Book10 from '../../../Images/Book10.svg'
+import api from '../../../Axios/api';
+import { BookInfo } from '../BookCard/BookCard';
 
 // const useStyles = makeStyles({
 //     keyIdeasTextTypography: {
@@ -62,9 +64,41 @@ const TabsContainer = styled("div")({
     
 // })
 
+
 const BookDescription = () => {
 
-    // const styles = useStyles();
+    // const [bookInfo, setBookInfo] = useState<BookInfo>({
+    //     id: 1,
+    //     title: "",
+    //     author: "",
+    //     image: "",
+    //     timeToRead: "",
+    //     numberOfReads: "",
+    //     status: {
+    //     isFinished: false,
+    //     isTrending: false,
+    //     justAdded: false,
+    //     isFeatured: false,
+    //     inLibrary: false
+    //     }
+    // })
+    
+    
+    // const updateFinish = async (num: number) => {
+    //     console.log("update button clicked")
+    //     if(bookInfo.status.isFinished) {
+    //         bookInfo.status.isFinished = false;
+    //     } else {
+    //         bookInfo.status.isFinished = true;
+    //     }
+    //     await api.put(`/library/${num}`, bookInfo)
+    // }
+    
+    // const addToLibrary= async (num: number) => {
+    //     console.log('onclick invoked for adding lib')
+    //     bookInfo.status.inLibrary = true
+    //     api.put(`library/${num}`,bookInfo)
+    // }
 
     return (
         <MainContainer>

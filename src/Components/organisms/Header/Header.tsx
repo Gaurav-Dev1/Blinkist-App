@@ -8,32 +8,42 @@ import {ReactComponent as Dropdown} from '../../../Images/Dropdown.svg';
 import { AvatarIcon } from '../../atoms/Avatar/Avatar';
 import ExploreTabOpen from '../ExploreTabOpen/ExploreTabOpen';
 import { useNavigate } from 'react-router-dom';
+import LogoutButton from '../../../Auth/Logout';
+import { useAuth0 } from '@auth0/auth0-react';
 
 const Header = () => {
 
     const navigate = useNavigate();
-    const openExploreTab = () => {
-        console.log(`explore tab invoked`)
-    }
+
+    const {user, isAuthenticated} = useAuth0();
+    console.log("userName " + user?.name)
+    console.log("user => " + JSON.stringify(user,null,2))
 
     const [iconStyle, setIconStyle] = useState({
         transform: "rotate(0deg)"
     })
 
     const [explore,setExplore] = useState(false)
+    const [signout,setSignout] = useState(false)
 
     const expandExploreTab = () => {
         explore ? setExplore(false) : setExplore(true)
         if(explore) 
             setIconStyle({ transform: "rotate(0deg)" })
         else 
-            setIconStyle({ transform: "rotate(180ded)"})
+            setIconStyle({ transform: "rotate(180deg)"})
+    }
+
+    const expandAccount = () => {
+        signout ? setSignout(false) : setSignout(true)
     }
 
     const openLibraryPage = () => {
         
-        navigate('/')
+        navigate('/myLib')
     }
+    console.log("user = " + user)
+    console.log("isAuthenticated " + isAuthenticated)
     return (
         <>
         <Box sx ={{height: '86px', width: '100%',  display: 'flex'}}>
@@ -49,28 +59,37 @@ const Header = () => {
                 <Box>
                     <Typography variant='body1'>Explore</Typography>
                 </Box>
-                <Box sx = {{marginLeft: '6.7px', iconStyle }}>
-                    <IconButtonComponent onClick={expandExploreTab} children = {<Dropdown/>}/>
+                <Box sx = {{marginLeft: '6.7px' }}>
+                    <IconButtonComponent onClick={expandExploreTab} children = {<Dropdown/>} style={iconStyle}/>
                 </Box>
             </Box>
             
-            <Box sx = {{marginTop: '33px', marginBottom: '33px', marginLeft: '40px'}}>
-                <Typography variant = 'body1' onClick={openLibraryPage}>
+            <Box sx = {{marginTop: '33px', marginBottom: '33px', marginLeft: '40px' ,cursor: 'pointer' }}>
+                <Typography variant = 'body1' onClick={openLibraryPage}   >
                     My Library
                 </Typography>
             </Box>
             
             <Box sx = {{display: 'flex',marginTop: '23px', marginBottom: '23px', marginLeft: '420px'}}>
-                <Box >
-                    <AvatarIcon />
-                </Box>
+                {
+                    !isAuthenticated? (
+                        <Typography variant='body1' sx={{marginTop:1}}>Account</Typography>
+                    ): 
+                    <Box >
+                    <AvatarIcon letter={user?.name?.charAt(0)}/>
+                    </Box>
+                }
+               
                 <Box sx = {{marginTop: '10px', marginLeft : '6.7px'}}>
-                    <IconButtonComponent  children = {<Dropdown/>}/>
+                    <IconButtonComponent onClick={expandAccount} children = {<Dropdown/>} />
                 </Box>
             </Box>
         </Box>
         {
             explore ? <ExploreTabOpen /> : null
+        }
+        {
+            signout ? <LogoutButton /> : null
         }
         </>
     );

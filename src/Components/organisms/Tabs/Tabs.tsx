@@ -58,6 +58,7 @@ const Tabs = () => {
         isFeatured: false,
         isTrending: false,
         justAdded: false,
+        inLibrary: false
       },
     },
   ]);
@@ -112,7 +113,7 @@ const Tabs = () => {
                     lineHeight: '23px'
                   }}
                 />
-                <Tab data-testId = "Tab1"
+                <Tab 
                   classes={{ selected: styles.selectedTab }}
                   label="Finished"
                   value="2"
@@ -132,7 +133,7 @@ const Tabs = () => {
             <TabPanel value="1">
               <CardStyling>
                 {
-                  books.filter((item) => !item.status.isFinished)
+                  books.filter((item) => (!item.status.isFinished && item.status.inLibrary))
                   .map((book, index) => {
                     return (
                       <BookCard 
@@ -156,7 +157,7 @@ const Tabs = () => {
             <TabPanel value="2">
               <CardStyling>
                 {
-                  books.filter((item) => item.status.isFinished)
+                  books.filter((item) => (item.status.isFinished && item.status.inLibrary))
                   .map((book, index) => {
                     return (
                       <BookCard 

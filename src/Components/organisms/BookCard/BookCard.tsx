@@ -3,12 +3,13 @@ import {makeStyles, styled } from '@mui/styles';
 import {Box, Typography } from '@mui/material';
 import IconText from '../../molecules/IconText/IconText';
 import ProgressBarComponent from '../../atoms/ProgressBar/ProgressBar';
-import {ReactComponent as Add} from '../../../Images/Add.svg'
+import {ReactComponent as Add} from '../../../Images/Vector.svg'
 import User from '../../../Images/UserIcon.svg'
 import Time from '../../../Images/Time.svg'
 import ButtonComponent from '../../atoms/Buttons/Button';
 import api from '../../../Axios/api';
 import { useNavigate } from 'react-router-dom';
+import MeatballsMenu from '../../../Images/MeatballsMenu.svg'
 
 
 
@@ -110,6 +111,7 @@ export interface BookCardProps {
     onClick?: () => void;
     isFinished?: boolean;
     addToLibrary?: boolean;
+    inLibrary?: boolean;
 }
 
 export type BookInfo = {
@@ -123,7 +125,8 @@ export type BookInfo = {
       isFinished: boolean,
       isTrending: boolean,
       justAdded: boolean,
-      isFeatured: boolean
+      isFeatured: boolean,
+      inLibrary?: boolean
     }
 }
   
@@ -134,13 +137,14 @@ const BookCard = (props: BookCardProps) => {
     
     const styles = useStyles();
 
-    const {title, image, author, timeToRead, isFinished,numberOfReads, readAgain, id, value, className, onClick, addToLibrary} = props;
+    const {title, image, author, timeToRead, isFinished,numberOfReads, readAgain, id, value, className, onClick, addToLibrary, inLibrary} = props;
 
     const [iconStyle, setIconStyle] = useState({})
 
     const handleMouseEnterEvent = () => {
         setIconStyle({
             fill: 'white',
+            stroke: 'white'
         })
     }
 
@@ -159,9 +163,11 @@ const BookCard = (props: BookCardProps) => {
         isFinished: false,
         isTrending: false,
         justAdded: false,
-        isFeatured: false
+        isFeatured: false,
+        inLibrary: false
         }
     })
+
     const updateFinish = async (num: number) => {
         console.log("update button clicked")
         if(bookInfo.status.isFinished) {
@@ -172,13 +178,17 @@ const BookCard = (props: BookCardProps) => {
         await api.put(`/library/${num}`, bookInfo)
     }
 
-    //Acc to my logic when book is not trending and not finished then it is in library
     const addToCurrentlyReading = async (num: number) => {
         console.log('add to current library clicked')
-        bookInfo.status.isFinished = false
-        bookInfo.status.isTrending = false
-
+        bookInfo.status.inLibrary = true
         api.put(`library/${num}`,bookInfo)
+    }
+
+    const showBookDetailsPage = (bookId: number) => {
+        console.log('book details invoked')
+        if(bookId === 10) {
+            navigate('/book-details')
+        } 
     }
 
     useEffect(() => {
@@ -195,22 +205,19 @@ const BookCard = (props: BookCardProps) => {
       }, [value])
 
 
-      const showBookDetailsPage = (bookId: number) => {
-        console.log('book details invoked')
-        if(bookId === 10) {
-            navigate('/book-details')
-        }
-            
-      }
+      
+
+      console.log(inLibrary)
 // sx = {{color: '#03314B'}}
     return (
+        
         <MainContainer onClick={onClick}>
             <ImageContainer>
                 <img src={image}/>
             </ImageContainer>
             <BookInfoContainer>
             
-                <Typography variant='subtitle1' style={{color: '#03314B', cursor: 'pointer'}} onClick={()=>showBookDetailsPage(id)} >
+                <Typography variant='subtitle1' style={{color: '#03314B', cursor: 'pointer'}} onClick={()=>showBookDetailsPage(value)} >
                     {title}
                 </Typography>
                 
@@ -246,7 +253,7 @@ const BookCard = (props: BookCardProps) => {
                         bgcolor: '#F1F6F4',
                         borderRadius: '0px 0px 8px 8px',
                         boxSizing: 'border-box',
-                        marginTop: '10px'
+                        marginTop: '12px'
                     }}
                     >
                     <ProgressBarComponent progress={30} />
@@ -266,7 +273,7 @@ const BookCard = (props: BookCardProps) => {
                             bgcolor: '#F1F6F4',
                             borderRadius: '0px 0px 8px 8px',
                             boxSizing: 'border-box',
-                            marginTop: '10px'
+                            marginTop: '12px'
                         }}
                         >
                         <ProgressBarComponent progress={100} />
@@ -274,13 +281,70 @@ const BookCard = (props: BookCardProps) => {
                         </div>
                     ) : null
             }
-            {
+            {/* {
+                
+                !inLibrary? (
+                    <ButtonDiv style={{marginTop: '15px'}}>
+                        <ButtonComponent  startIcon={<Add style={iconStyle}/>} className={styles.button} onClick={() => addToCurrentlyReading(value)} onMouseEnter={handleMouseEnterEvent} onMouseLeave={handleMouseLeaveEvent} >Add To Library</ButtonComponent>
+                    </ButtonDiv>
+                ): 
+                (
+                    <div style={{height: 52, position:'relative',top:30, bottom:0}}>
+                    <img src={MeatballsMenu} style={{marginLeft: '247px'}}/>
+                    <Box
+                    sx={{
+                        width: 284,
+                        bgcolor: '#F1F6F4',
+                        borderRadius: '0px 0px 8px 8px',
+                        boxSizing: 'border-box',
+                        marginTop: '12px'
+                    }}
+                    >
+                    <ProgressBarComponent progress={isFinished? 100: 30} />
+                    </Box>
+                    </div>
+                )
+            } */}
+            {/* {
                 addToLibrary ? (
                     <ButtonDiv style={{marginTop: '15px'}}>
                         <ButtonComponent  startIcon={<Add style={iconStyle}/>} className={styles.button} onClick={() => addToCurrentlyReading(value)} onMouseEnter={handleMouseEnterEvent} onMouseLeave={handleMouseLeaveEvent} >Add To Library</ButtonComponent>
                     </ButtonDiv>
                 ): null
+            } */}
+            {/* {
+                
+                !inLibrary? (
+                    <ButtonDiv style={{marginTop: '15px'}}>
+                        <ButtonComponent  startIcon={<Add style={iconStyle}/>} className={styles.button} onClick={() => addToCurrentlyReading(value)} onMouseEnter={handleMouseEnterEvent} onMouseLeave={handleMouseLeaveEvent} >Add To Library</ButtonComponent>
+                    </ButtonDiv>
+                ): null 
+            } */}
+            {
+                inLibrary? (
+                    <div style={{height: 52, position:'relative',top:30, bottom:0}}>
+                    <img src={MeatballsMenu} style={{marginLeft: '247px'}}/>
+                    <Box
+                    sx={{
+                        width: 284,
+                        bgcolor: '#F1F6F4',
+                        borderRadius: '0px 0px 8px 8px',
+                        boxSizing: 'border-box',
+                        marginTop: '12px'
+                    }}
+                    >
+                    <ProgressBarComponent progress={isFinished? 100: 30} />
+                    </Box>
+                    </div>
+                ): null
             }
+            {
+                (typeof(inLibrary) !== undefined && inLibrary === false) ?
+                <ButtonDiv style={{marginTop: '15px'}}>
+                    <ButtonComponent  startIcon={<Add style={iconStyle}/>} className={styles.button} onClick={() => addToCurrentlyReading(value)} onMouseEnter={handleMouseEnterEvent} onMouseLeave={handleMouseLeaveEvent} >Add To Library</ButtonComponent>
+                </ButtonDiv> : null
+            }
+            
         </MainContainer>
     );
 }
