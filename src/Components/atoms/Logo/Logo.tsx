@@ -5,7 +5,7 @@ export interface LogoProps {
     src ?: string
 }
 
-function Logo({src}: LogoProps) {
+const Logo = ({src}: LogoProps) => {
 
     return (
         <div>

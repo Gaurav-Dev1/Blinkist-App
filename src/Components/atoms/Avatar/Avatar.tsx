@@ -10,7 +10,7 @@ export interface AvatarProps {
 export const AvatarIcon = (props:AvatarProps) => {
     const {letter, height, width} = props;
     return (
-        <Avatar sx={{bgcolor: '#69A6E3', width: {width} , height: {height}}}>
+        <Avatar data-testid="Avatar" sx={{bgcolor: '#69A6E3', width: {width} , height: {height}}}>
             {letter}
         </Avatar>
     );

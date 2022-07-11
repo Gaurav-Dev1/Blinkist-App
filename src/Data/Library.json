@@ -12,7 +12,7 @@
         "isTrending": true,
         "isFeatured": false,
         "justAdded": false,
-        "inLibrary": false
+        "inLibrary": true
       }
     },
     {
@@ -132,7 +132,7 @@
         "isTrending": true,
         "justAdded": true,
         "isFeatured": false,
-        "inLibrary": false
+        "inLibrary": true
       }
     },
     {

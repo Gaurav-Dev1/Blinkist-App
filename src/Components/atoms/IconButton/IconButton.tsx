@@ -15,7 +15,7 @@ const IconButtonComponent = (props:IconButtonProps) => {
     const {style,children,onClick,className} = props
 
     return (
-       <IconButton style = {style} onClick = {onClick} className = {className}
+       <IconButton style = {style} onClick = {onClick} className = {className} data-testid="IconButton"
        >
         {children}
        </IconButton>
