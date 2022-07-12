@@ -59,13 +59,13 @@ const Header = () => {
                 <Box>
                     <Typography variant='body1'>Explore</Typography>
                 </Box>
-                <Box sx = {{marginLeft: '6.7px' }}>
-                    <IconButtonComponent onClick={expandExploreTab} children = {<Dropdown/>} style={iconStyle}/>
+                <Box sx = {{marginLeft: '6.7px' }} >
+                    <IconButtonComponent data-testid="expand-explore" onClick={expandExploreTab} children = {<Dropdown/>} style={iconStyle}/>
                 </Box>
             </Box>
             
             <Box sx = {{marginTop: '33px', marginBottom: '33px', marginLeft: '40px' ,cursor: 'pointer' }}>
-                <Typography variant = 'body1' onClick={openLibraryPage}   >
+                <Typography variant = 'body1' onClick={openLibraryPage}  data-testid="my-library" >
                     My Library
                 </Typography>
             </Box>
@@ -81,7 +81,7 @@ const Header = () => {
                 }
                
                 <Box sx = {{marginTop: '10px', marginLeft : '6.7px'}}>
-                    <IconButtonComponent onClick={expandAccount} children = {<Dropdown/>} />
+                    <IconButtonComponent onClick={expandAccount} children = {<Dropdown/>} data-testid="expand-explore" />
                 </Box>
             </Box>
         </Box>

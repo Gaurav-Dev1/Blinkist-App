@@ -162,7 +162,7 @@
         "isTrending": true,
         "justAdded": false,
         "isFeatured": false,
-        "inLibrary": false
+        "inLibrary": true
       }
     }
   ]

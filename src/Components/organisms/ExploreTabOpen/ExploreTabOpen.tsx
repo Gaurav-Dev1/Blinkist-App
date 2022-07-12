@@ -5,7 +5,6 @@ import { Divider} from '@mui/material';
 import { ExploreTabData } from '../../../Data/ExploreTabData';
 import IconText from '../../molecules/IconText/IconText';
 import { useNavigate } from 'react-router-dom';
-// import zIndex from "@material-ui/core/styles/zIndex";
 
 
 const useStyles = makeStyles({

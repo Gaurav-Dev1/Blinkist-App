@@ -213,7 +213,7 @@ const BookCard = (props: BookCardProps) => {
         
         <MainContainer onClick={onClick}>
             <ImageContainer>
-                <img src={image}/>
+                <img src={image} alt='book'/>
             </ImageContainer>
             <BookInfoContainer>
             
@@ -340,7 +340,7 @@ const BookCard = (props: BookCardProps) => {
             }
             {
                 (typeof(inLibrary) !== undefined && inLibrary === false) ?
-                <ButtonDiv style={{marginTop: '15px'}}>
+                <ButtonDiv style={{marginTop: '15px'}} data-testid='addToLibrary'>
                     <ButtonComponent  startIcon={<Add style={iconStyle}/>} className={styles.button} onClick={() => addToCurrentlyReading(value)} onMouseEnter={handleMouseEnterEvent} onMouseLeave={handleMouseLeaveEvent} >Add To Library</ButtonComponent>
                 </ButtonDiv> : null
             }

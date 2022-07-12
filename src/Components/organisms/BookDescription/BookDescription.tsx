@@ -156,7 +156,7 @@ const BookDescription = () => {
                 </Box>   
             </LeftContainer>
             <RightContainer>
-                <img src={Book10}/>
+                <img src={Book10} alt = 'book'/>
             </RightContainer>
         </MainContainer>
     );

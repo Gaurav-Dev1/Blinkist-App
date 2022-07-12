@@ -72,7 +72,7 @@ function BookCategories(props: BookCategoryProps) {
         <>
         <Typography variant='h3'>{title}</Typography>
         <br></br>
-        <MainContainer onClick={() => setCount(count+1)}>
+        <MainContainer onClick={() => setCount(count+1)} data-testid='books'>
             {
                 (status === 'trending') ? 
         

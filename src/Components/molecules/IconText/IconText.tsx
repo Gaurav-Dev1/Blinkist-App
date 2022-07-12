@@ -43,7 +43,7 @@ const IconText = (props: IconTextProps) => {
   const { imgSrc, title, variant, className, onClick } = props;
   return (
     <ThemeProvider theme={theme}>
-      <Box sx={{ display: "flex" }} >
+      <Box sx={{ display: "flex" }} data-testid= "IconText">
         <Box>
           <img src={imgSrc} />
         </Box>
