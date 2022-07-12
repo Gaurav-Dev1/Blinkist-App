@@ -1,6 +1,6 @@
 import React from "react";
 import { Story } from "@storybook/react";
-import AboutBookTab from "./AboutBook";
+import AboutBookTab from "./AboutBookTab";
 
 export default {
     title: 'Organisms/AboutBookTab',

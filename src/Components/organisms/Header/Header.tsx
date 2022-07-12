@@ -1,4 +1,4 @@
-import React, { useState, useSyncExternalStore } from "react";
+import React, { useState} from "react";
 import { Box, Typography } from "@mui/material";
 import Logo from "../../atoms/Logo/Logo";
 import BlinkistLogo from "../../atoms/Logo/BlinkistLogo.svg";
@@ -8,7 +8,7 @@ import { ReactComponent as Dropdown } from "../../../Images/Dropdown.svg";
 import { AvatarIcon } from "../../atoms/Avatar/Avatar";
 import ExploreTabOpen from "../ExploreTabOpen/ExploreTabOpen";
 import { useNavigate } from "react-router-dom";
-import LogoutButton from "../../../Auth/Logout";
+import LogoutButton from "../../../Auth/LogoutButton";
 import { useAuth0 } from "@auth0/auth0-react";
 
 const Header = () => {

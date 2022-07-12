@@ -139,11 +139,8 @@ const BookCard = (props: BookCardProps) => {
     isFinished,
     numberOfReads,
     readAgain,
-    id,
     value,
-    className,
     onClick,
-    addToLibrary,
     inLibrary,
   } = props;
 
@@ -213,7 +210,6 @@ const BookCard = (props: BookCardProps) => {
   }, [value]);
 
   console.log(inLibrary);
-  // sx = {{color: '#03314B'}}
   return (
     <MainContainer onClick={onClick}>
       <ImageContainer>
@@ -293,45 +289,6 @@ const BookCard = (props: BookCardProps) => {
           </Box>
         </div>
       ) : null}
-      {/* {
-                
-                !inLibrary? (
-                    <ButtonDiv style={{marginTop: '15px'}}>
-                        <ButtonComponent  startIcon={<Add style={iconStyle}/>} className={styles.button} onClick={() => addToCurrentlyReading(value)} onMouseEnter={handleMouseEnterEvent} onMouseLeave={handleMouseLeaveEvent} >Add To Library</ButtonComponent>
-                    </ButtonDiv>
-                ): 
-                (
-                    <div style={{height: 52, position:'relative',top:30, bottom:0}}>
-                    <img src={MeatballsMenu} style={{marginLeft: '247px'}}/>
-                    <Box
-                    sx={{
-                        width: 284,
-                        bgcolor: '#F1F6F4',
-                        borderRadius: '0px 0px 8px 8px',
-                        boxSizing: 'border-box',
-                        marginTop: '12px'
-                    }}
-                    >
-                    <ProgressBarComponent progress={isFinished? 100: 30} />
-                    </Box>
-                    </div>
-                )
-            } */}
-      {/* {
-                addToLibrary ? (
-                    <ButtonDiv style={{marginTop: '15px'}}>
-                        <ButtonComponent  startIcon={<Add style={iconStyle}/>} className={styles.button} onClick={() => addToCurrentlyReading(value)} onMouseEnter={handleMouseEnterEvent} onMouseLeave={handleMouseLeaveEvent} >Add To Library</ButtonComponent>
-                    </ButtonDiv>
-                ): null
-            } */}
-      {/* {
-                
-                !inLibrary? (
-                    <ButtonDiv style={{marginTop: '15px'}}>
-                        <ButtonComponent  startIcon={<Add style={iconStyle}/>} className={styles.button} onClick={() => addToCurrentlyReading(value)} onMouseEnter={handleMouseEnterEvent} onMouseLeave={handleMouseLeaveEvent} >Add To Library</ButtonComponent>
-                    </ButtonDiv>
-                ): null 
-            } */}
       {inLibrary ? (
         <div style={{ height: 52, position: "relative", top: 30, bottom: 0 }}>
           <img src={MeatballsMenu} style={{ marginLeft: "247px" }} />

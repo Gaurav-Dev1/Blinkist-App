@@ -37,9 +37,8 @@ const useStyles = makeStyles({
 });
 
 const IconText = (props: IconTextProps) => {
-  const styles = useStyles();
 
-  const { imgSrc, title, variant, className, onClick } = props;
+  const { imgSrc, title, variant,  onClick } = props;
   return (
     <ThemeProvider theme={theme}>
       <Box sx={{ display: "flex" }} data-testid="IconText">

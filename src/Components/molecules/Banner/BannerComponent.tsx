@@ -1,6 +1,5 @@
 import React from "react";
 import { Container, ThemeProvider, Typography } from "@mui/material";
-import { makeStyles } from "@mui/styles";
 import { styled } from "@mui/system";
 import readingLady from "../../../Images/ReadingLady.svg";
 import theme from "../../../Themes/Theme";

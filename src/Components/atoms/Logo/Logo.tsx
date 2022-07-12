@@ -1,5 +1,4 @@
 import React from "react";
-import BlinkistLogo from "./BlinkistLogo.svg";
 
 export interface LogoProps {
   src?: string;

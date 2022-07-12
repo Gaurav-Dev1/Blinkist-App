@@ -15,7 +15,7 @@ const BodyComponent = styled("div")({
 });
 
 const BookDescription = (props: BookDescriptionTemplateProps) => {
-  const { header, body, footer } = props;
+  const { body } = props;
 
   return (
     <div>

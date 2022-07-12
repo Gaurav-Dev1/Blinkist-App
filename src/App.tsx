@@ -6,7 +6,7 @@ import BookDetailsPage from "./Components/Pages/BookDetailsPage/BookDetailsPage"
 import MyLibraryPage from "./Components/Pages/MyLibraryPage/MyLibraryPage";
 import EntrepreneurshipPage from "./Components/Pages/EntrepreneurshipPage/EntrepreneurshipPage";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import LoginButton from "./Auth/Login";
+import LoginButton from "./Auth/LoginButton";
 
 function App() {
   return (

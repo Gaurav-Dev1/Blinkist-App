@@ -1,6 +1,5 @@
 import React from "react";
-import { Box, Container, Typography, ThemeProvider } from "@mui/material";
-import { flexbox, styled } from "@mui/system";
+import { Box, Typography, ThemeProvider } from "@mui/material";
 import theme from "../../../Themes/Theme";
 import Logo from "../../atoms/Logo/Logo";
 import { footerData } from "../../../Data/FooterData";

@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import AboutBook from "./AboutBook";
+import AboutBook from "./AboutBookTab";
 
 describe("About book testing", () => {
   test("Testing for tabs", () => {

@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import { Box, Typography } from "@mui/material";
-import { makeStyles, styled } from "@mui/styles";
+import { styled } from "@mui/styles";
 import { Constants } from "../../../Data/Constants";
 import IconText from "../../molecules/IconText/IconText";
 import Time from "../../../Images/Time.svg";
 import ButtonComponent from "../../atoms/Buttons/Button";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import AboutBookTab from "../AboutBook/AboutBook";
+import AboutBookTab from "../AboutBook/AboutBookTab";
 import Book10 from "../../../Images/Book10.svg";
 import api from "../../../Axios/api";
 import { BookInfo } from "../BookCard/BookCard";

@@ -2,7 +2,6 @@ import React from "react";
 import FooterComponent from "../../molecules/FooterBar/FooterComponent";
 import Header from "../../organisms/Header/Header";
 import { styled } from "@mui/styles";
-import Tabs from "../../organisms/Tabs/Tabs";
 import { Typography, Box } from "@mui/material";
 
 const MyLibraryContainer = styled("div")({

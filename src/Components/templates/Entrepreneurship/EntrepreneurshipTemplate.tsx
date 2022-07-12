@@ -1,10 +1,8 @@
 import React from "react";
 import Header from "../../organisms/Header/Header";
 import Footer from "../../molecules/FooterBar/FooterComponent";
-import BannerComponent from "../../molecules/Banner/BannerComponent";
 import { styled } from "@mui/styles";
-import SearchBarComponent from "../../molecules/SearchBar/SearchBarComponent";
-import BookCategories from "../../organisms/BookCategories/BookCategories";
+
 
 export interface EntrepreneurshipTemplateProps {
   banner?: React.ReactNode;

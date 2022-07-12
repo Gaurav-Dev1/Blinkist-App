@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { styled } from "@mui/styles";
-import { Box, Typography } from "@mui/material";
-import { BookInfo } from "../BookCard/BookCard";
+import {  Typography } from "@mui/material";
+import BookCard, { BookInfo } from "../BookCard/BookCard";
 import api from "../../../Axios/api";
-import BookCard from "../BookCard/BookCard";
 
 export interface BookDataProps {
   id: number;
