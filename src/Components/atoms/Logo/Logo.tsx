@@ -1,17 +1,16 @@
-import React from 'react';
-import BlinkistLogo from './BlinkistLogo.svg'
+import React from "react";
+import BlinkistLogo from "./BlinkistLogo.svg";
 
 export interface LogoProps {
-    src ?: string
+  src?: string;
 }
 
-const Logo = ({src}: LogoProps) => {
-
-    return (
-        <div>
-            <img src={src} alt="My logo" />
-        </div>
-    );
-}
+const Logo = ({ src }: LogoProps) => {
+  return (
+    <div>
+      <img src={src} alt="My logo" />
+    </div>
+  );
+};
 
 export default Logo;

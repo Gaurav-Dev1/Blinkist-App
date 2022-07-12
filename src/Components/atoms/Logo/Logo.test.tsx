@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import Logo from "./Logo";
-import BlinkistLogo from './BlinkistLogo.svg'
+import BlinkistLogo from "./BlinkistLogo.svg";
 
 describe("Logo", () => {
   test('Logo must have src = "/logo.svg" and alt = "Logo"', () => {

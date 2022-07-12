@@ -27,32 +27,37 @@ export interface IconTextProps {
 
 const useStyles = makeStyles({
   IconTextTypography: {
-      fontFamily: "Cera Pro",
-      fontStyle: "normal",
-      fontHeight: 400,
-      fontSize: "16px",
-      lineHeight: "20px",
-      color: "#6D787E",
-    },
+    fontFamily: "Cera Pro",
+    fontStyle: "normal",
+    fontHeight: 400,
+    fontSize: "16px",
+    lineHeight: "20px",
+    color: "#6D787E",
+  },
 });
 
 const IconText = (props: IconTextProps) => {
-
   const styles = useStyles();
 
   const { imgSrc, title, variant, className, onClick } = props;
   return (
     <ThemeProvider theme={theme}>
-      <Box sx={{ display: "flex" }} data-testid= "IconText">
+      <Box sx={{ display: "flex" }} data-testid="IconText">
         <Box>
           <img src={imgSrc} />
         </Box>
         <Box sx={{ marginLeft: "5px" }}>
-          <Typography variant={variant} sx = {{color: '#6D787E'}} onClick= {onClick}>{title}</Typography>
+          <Typography
+            variant={variant}
+            sx={{ color: "#6D787E" }}
+            onClick={onClick}
+          >
+            {title}
+          </Typography>
         </Box>
       </Box>
     </ThemeProvider>
   );
-}
+};
 
 export default IconText;

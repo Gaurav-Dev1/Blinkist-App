@@ -22,6 +22,6 @@ const EntrepreneurshipPage = () => {
       />
     </>
   );
-}
+};
 
 export default EntrepreneurshipPage;
