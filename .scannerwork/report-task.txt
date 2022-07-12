@@ -1,0 +1,7 @@
+organization=gauarav-spring-assignment
+projectKey=gauravshukla-blinkistdemo
+serverUrl=https://sonarcloud.io
+serverVersion=8.0.0.30143
+dashboardUrl=https://sonarcloud.io/dashboard?id=gauravshukla-blinkistdemo
+ceTaskId=AYHr9gpLrGi8A64TaNTN
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AYHr9gpLrGi8A64TaNTN

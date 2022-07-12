@@ -1,3 +1,7 @@
+import { ThemeProvider } from "@mui/material/styles";
+// import { ThemeProvider as Emotion10ThemeProvider } from "emotion-theming";
+import theme from '../src/Themes/Theme'
+
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
@@ -7,3 +11,14 @@ export const parameters = {
     },
   },
 }
+
+
+export const decorators = [
+	(Story) => (
+		// <Emotion10ThemeProvider theme={theme}>
+		<ThemeProvider theme={theme}>
+		  <Story />
+		</ThemeProvider>
+		// </Emotion10ThemeProvider>
+	),
+  ];
