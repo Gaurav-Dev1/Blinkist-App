@@ -4,7 +4,7 @@ import FooterComponent from "../../molecules/FooterBar/FooterComponent";
 import BookDescriptionLayout from "../../templates/BookDescription/BookDescriptionLayout";
 import BookDescription from "../../organisms/BookDescription/BookDescription";
 
-function BookDetailsPage() {
+const BookDetailsPage = () => {
   return (
     <>
       <BookDescriptionLayout

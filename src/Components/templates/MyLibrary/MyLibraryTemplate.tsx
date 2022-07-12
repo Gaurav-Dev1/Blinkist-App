@@ -15,7 +15,7 @@ export interface MyLibraryTemplateProps {
   body?: React.ReactNode;
 }
 
-function MyLibraryTemplate(props: MyLibraryTemplateProps) {
+const MyLibraryTemplate = (props: MyLibraryTemplateProps) => {
   let { body } = props;
 
   return (
